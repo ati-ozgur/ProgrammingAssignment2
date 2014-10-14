@@ -1,13 +1,16 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Programming Assignment 2: Lexical Scoping 
+## See testCacheSolve.R for example usage.
+## 
 
-## Write a short comment describing this function
-
+## A wrapper code for matrix. 
+## This code wraps normal matrix so that its inverse can be stored.
 makeCacheMatrix <- function(x = matrix()) {
+        # take values and store them
         inverseOfMatrix <- NULL
         mat<- x
         
         set <- function(y) {
+                # underlying matrix changed therefore remove inverse value
                 mat <<- y
                 inverseOfMatrix <<- NULL
         }
@@ -20,8 +23,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## This cache solve function expects a wrapped matrix created with makeCacheMatrix(matrix) code.
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
 
